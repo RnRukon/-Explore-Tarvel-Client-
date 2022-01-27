@@ -27,7 +27,7 @@ const ManageAllPosts = () => {
 
 
     const handleApprove = (id) => {
-        fetch(`http://localhost:5000/approve/${id}`, {
+        fetch(`https://hidden-plains-90674.herokuapp.com/approve/${id}`, {
             method: "PUT",
             headers: {
 
@@ -40,7 +40,7 @@ const ManageAllPosts = () => {
 
                 if (data.modifiedCount) {
 
-                    fetch('http://localhost:5000/travels')
+                    fetch('https://hidden-plains-90674.herokuapp.com/travels')
                         .then(res => res.json())
                         .then(data => setTravels(data))
                 }

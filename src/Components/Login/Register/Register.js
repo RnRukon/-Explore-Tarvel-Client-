@@ -85,7 +85,7 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             color="secondary"
                         />
-                        <Button color="secondary" sx={{ width: 1, mt: 5 }} type="submit" className="feature-button" variant="contained">Register</Button>
+                        <Button color="secondary" sx={{ width: 1, mt: 5 }} type="submit" variant="contained">Register</Button>
                     </form>
             }
 

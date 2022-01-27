@@ -52,7 +52,7 @@ const Login = () => {
                     onChange={login}
                     color="secondary"
                 />
-                <Button color="secondary" type="submit" sx={{ width: 1, mt: 5 }} className="feature-button" variant="contained">Login</Button>
+                <Button color="secondary" type="submit" sx={{ width: 1, mt: 5 }} variant="contained">Login</Button>
 
             </form>
 

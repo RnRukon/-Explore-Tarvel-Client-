@@ -64,7 +64,7 @@ const Travelers = () => {
                 <div className=' flex justify-center mb-3'>
                     <Pagination
                         postsPerPage={postsPerPage}
-                        totalPosts={currentPosts?.length}
+                        totalPosts={managePost?.length}
                         paginate={paginate}
                     ></Pagination>
                 </div>

@@ -20,7 +20,7 @@ const Sitebar = () => {
             <div className=' flex justify-center  overflow-y-auto max-h-screen scroll-b' >
                 <div>
                     {
-                        topRating?.map(topBlog =>
+                        topRating?.reverse()?.map(topBlog =>
 
                             <div key={topBlog?._id} className="max-w-sm w-full py-6  cursor-pointer">
                                 <div className="bg-white shadow-xl rounded-lg overflow-hidden">

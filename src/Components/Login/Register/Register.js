@@ -19,6 +19,7 @@ const Register = () => {
     }
 
     const handleLoginSubmit = (e) => {
+        e.preventDefault();
         if (loginData.password !== loginData.rePassword) {
 
             return alert('Your PassWord ded not match')
@@ -27,7 +28,7 @@ const Register = () => {
 
         registerUser(loginData.email, loginData.password, loginData.name, location, history)
 
-        e.preventDefault();
+
         e.target.reset();
     }
     return (

@@ -1,16 +1,11 @@
 const firebaseConfig = {
 
-  apiKey: "AIzaSyA32lXpB5KU8UVr2G25HqDMzAtf67xy3yo",
-
-  authDomain: "premier-pottery-retailer.firebaseapp.com",
-
-  projectId: "premier-pottery-retailer",
-
-  storageBucket: "premier-pottery-retailer.appspot.com",
-
-  messagingSenderId: "661126792322",
-
-  appId: "1:661126792322:web:15af354e4e7a41c631609b"
+  apiKey: "AIzaSyDQNCvUz2__izGra3pBYBCyBeZICzt7F3c",
+  authDomain: "explore-travel-df23a.firebaseapp.com",
+  projectId: "explore-travel-df23a",
+  storageBucket: "explore-travel-df23a.appspot.com",
+  messagingSenderId: "468275197433",
+  appId: "1:468275197433:web:bc21a6f1e756cd7f413928"
 
 };
 export default firebaseConfig;

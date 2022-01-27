@@ -21,7 +21,7 @@ const UpdateTravels = () => {
             .then(res => res.json())
             .then(data => setTravels(data) || '')
     }, [])
-
+    const managePost = travels?.filter(travel => travel.role === true);
 
 
     const handleTravelsDelete = (id) => {
@@ -54,7 +54,7 @@ const UpdateTravels = () => {
             <h1 className='text-pink-700 underline uppercase py-4 text-4xl font-bold text-center'>Update Product</h1>
             <div className="row row-cols-1 row-cols-sm-4  row-cols-md-2 row-cols-lg-4 g-4">
                 {
-                    travels?.reverse()?.map(travel =>
+                    managePost?.reverse()?.map(travel =>
                         <div className="col ">
                             <Box className="">
                                 <div className="bg-cover bg-center h-56 " >

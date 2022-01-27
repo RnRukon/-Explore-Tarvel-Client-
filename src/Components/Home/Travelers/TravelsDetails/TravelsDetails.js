@@ -1,4 +1,4 @@
-import { Box, Rating, Container, Divider, Grid, Typography } from '@mui/material';
+import { Box, Container, Divider, Grid, Rating, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../../../Shared/Footer/Footer';
@@ -13,6 +13,7 @@ const TravelsDetails = () => {
             .then(data => seTravel(data))
     }, [id])
 
+    console.log(travel)
     return (
         <div>
             <NavigationBar />
@@ -31,8 +32,7 @@ const TravelsDetails = () => {
                             <div className='flex '>
                                 <h4 className=' font-bold text-emerald-500'>Total Cost $ {travel?.price}</h4>
                                 <Rating
-                                    className='ml-5'
-                                    value={travel?.rating}
+                                    value={4}
                                     precision={0.5}
                                     readOnly
                                 />

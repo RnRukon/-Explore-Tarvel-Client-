@@ -31,7 +31,7 @@ const AddedTravel = () => {
     const [rating, setRating] = React.useState(2);
     const [hover, setHover] = React.useState(-1);
     const classes = useStyles();
-
+    const { admin } = useAuth();
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -40,7 +40,7 @@ const AddedTravel = () => {
         setTravelerData(newTravelerData)
 
     }
-
+    console.log(admin)
     const handleAddAProduct = (e) => {
         e.preventDefault();
 
@@ -48,6 +48,8 @@ const AddedTravel = () => {
         travelerData.time = new Date().toTimeString();
         travelerData.user = user.displayName;
         travelerData.rating = rating;
+        travelerData.role = admin;
+
         console.log(travelerData)
         fetch('https://hidden-plains-90674.herokuapp.com/travelPost', {
             method: "POST",

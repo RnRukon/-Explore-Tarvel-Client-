@@ -11,6 +11,8 @@ import LoginToggle from './Components/Login/LoginToggle/LoginToggle';
 import Dashboard from './Components/Dashboard/Dashboard'
 import TravelsDetails from './Components/Home/Travelers/TravelsDetails/TravelsDetails';
 import TravelPost from "./Components/Home/TravelPost/TravelPost";
+import PrivateRoute from "./Components/Login/LoginToggle/PrivateRoute/PrivateRoute";
+import Travels from "./Components/Home/Trevels/Trevels";
 
 
 
@@ -29,18 +31,22 @@ function App() {
             <Route exact path='/'>
               <Home></Home>
             </Route>
-            <Route path='/travelsDetails/:id'>
-              <TravelsDetails></TravelsDetails>
+            <Route exact path='/travels'>
+              <Travels></Travels>
             </Route>
+
+            <PrivateRoute path='/travelsDetails/:id'>
+              <TravelsDetails></TravelsDetails>
+            </PrivateRoute>
             <Route exact path='/login'>
               <LoginToggle />
             </Route>
-            <Route exact path='/travelPost'>
+            <PrivateRoute exact path='/travelPost'>
               <TravelPost />
-            </Route>
-            <Route path='/dashboard'>
+            </PrivateRoute>
+            <PrivateRoute path='/dashboard'>
               <Dashboard />
-            </Route>
+            </PrivateRoute>
 
           </Switch>
         </Router>

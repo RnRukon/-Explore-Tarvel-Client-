@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Explore Travels
+ 
+# Live Site:
+(https://github.com/facebook/create-react-app)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Server Site Code:
+(https://github.com/RnRukon/Explore-Tarvel-server)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Job Task
+* Job Description:
+A travel agency is currently looking for a full stack web developer to build their travel web application where the travelers can share their experience with others. 
 
-### `npm start`
+* Task description:
+Build a web application that shows all the travelers' experiences on the home page. (Feel free to use your design).
+Add a navigation bar with suitable options, a carousel, a sidebar(for top-rated spots), and a footer.
+The home page will contain the blogs and with pagination (10 blog articles per page).
+With the click of a single blog, the details of that specific travel experience will be shown. The parties may include several information like date, time, location, expense, and rating with stars of the experience. (Feel free to add more information according to your preference).
+There should be an option to add your own experience on the website(user login needed) . 
+A feature should be implemented to compare the experience based on the information provided. 
+For example, Comparisons can be made on the basis of the review stars or ratings, expense, transportation facilities, and other relevant factors you think.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Authentication:
+In order to view someone’s blog on click, the user has to be registered. In this case, enable google sign in, register user and an email verification option after a user is registered as well.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Admin functionalities:
+An admin panel has to be implemented as well which can carry out the following functionalities:
+Admin can see all blog posts and create, read, update, delete blog posts in real time without page reload.
+For any submission from the user, admin has to approve and after that the blog will be visible in the UI and in the dashboard it will be marked as approved.
+There will be an Admin account that can add more Admins and Admin can post new blog articles that’ll be added dynamically to the home page.
+Add a field to add a travel related image
+Add a field to add title
+Add the traveler info
+Add a field to add a description.
+Add a field to give a category 
+cost of the travel
+Location address
+Admin’s all activity is protected page after complete log in then can do admin activity. [use email: test@test.com and password: #2021dev as password for default admin. (custom authentication)]
 
-### `npm test`
+* Additional information:
+Use react.js for the frontend. You are free to use any CSS library you want. But, we recommend using Tailwind CSS.
+The UI of the blog  page should be consistent with the home page, use your imagination to come up with something that’ll look good with the rest of the site.
+Must be responsive, use your imagination to make it responsive according to users' needs.
+Use Nodejs, express.js, and MongoDB on the backend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

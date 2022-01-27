@@ -56,10 +56,12 @@ const UpdateTravels = () => {
                 {
                     travels?.reverse()?.map(travel =>
                         <div className="col ">
-                            <Box className="card h-100">
-                                <Box sx={{ height: 290, overflow: 'hidden' }}>
-                                    <img className='img-fluid' src={travel?.img} alt="..." />
-                                </Box>
+                            <Box className="">
+                                <div className="bg-cover bg-center h-56 " >
+                                    <div className="flex justify-end">
+                                        <img src={travel?.img} alt="" />
+                                    </div>
+                                </div>
                                 <div className="card-body">
                                     <h5 className="card-title text-xl font-bold">{travel?.title}</h5>
                                     <div className=' flex justify-between'>

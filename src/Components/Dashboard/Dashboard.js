@@ -12,28 +12,25 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
-import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
-
+import UpdateTravels from './UpdateTravels/UpdateTravels';
+import UpdateTravelsFrom from './UpdateTravels/UpdateTravelsFrom/UpdateTravelsFrom'
 import AdminRoute from './AdminRoute/AdminRoute';
 import { Switch, Route, Link, useRouteMatch, useLocation } from "react-router-dom";
-import MyOrder from './UserDashboard/MyOrder/MyOrder';
-import ManageAllOrders from './ManageAllOrders/ManageAllOrders';
-
 import Review from './UserDashboard/Review/Review';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import PreviewIcon from '@mui/icons-material/Preview';
 import LogoutIcon from '@mui/icons-material/Logout';
-import RequestGet from './RequestGet/RequestGet';
 import useAuth from '../Hooks/useAuth';
-import UpdateTravels from './UpdateProduct/UpdateTravels';
-import UpdateTravelsFrom from './UpdateProduct/UpdateTravelsFrom/UpdateTravelsFrom';
 import AddedTravel from './AddedTravels/AddedTravels';
+import ManageAllPosts from './ManageAllPost/ManageAllPosts';
+import MyPosts from './UserDashboard/MyPost/MyPosts';
+
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -61,12 +58,6 @@ function ResponsiveDrawer(props) {
             </Link>
             <List>
                 {!admin && <Box>
-                    <Link to={`${url}`} className="text-decoration-none">
-                        <ListItem button>
-                            <ProductionQuantityLimitsIcon />MY Order
-                        </ListItem>
-                    </Link>
-
                     <Link to={`${url}/review`} className="text-decoration-none">
                         <ListItem button>
                             <PreviewIcon />Review
@@ -77,7 +68,7 @@ function ResponsiveDrawer(props) {
                 {admin && <Box>
                     <Link to={`${url}`} className="text-decoration-none">
                         <ListItem button>
-                            <AdminPanelSettingsIcon />   Manage All Orders
+                            <AdminPanelSettingsIcon />   Manage All Post
                         </ListItem>
                     </Link>
                     <Link to={`${url}/makeAdmin`} className="text-decoration-none">
@@ -96,11 +87,7 @@ function ResponsiveDrawer(props) {
                             <LogoutIcon />  Add a Travels
                         </ListItem>
                     </Link>
-                    <Link to={`${url}/request`} className="text-decoration-none">
-                        <ListItem button>
-                            <AnnouncementOutlinedIcon />  Request
-                        </ListItem>
-                    </Link>
+
                 </Box>}
 
                 <ListItem button onClick={logOut} >
@@ -195,11 +182,12 @@ function ResponsiveDrawer(props) {
             >
                 <Toolbar />
                 <Switch>
+
                     {!admin && <Route exact path={path}>
-                        <MyOrder></MyOrder>
+                        <MyPosts></MyPosts>
                     </Route>}
                     {admin && <Route exact path={path}>
-                        <ManageAllOrders></ManageAllOrders>
+                        <ManageAllPosts></ManageAllPosts>
                     </Route>}
 
                     <Route exact path={`${path}/review`}>
@@ -216,9 +204,6 @@ function ResponsiveDrawer(props) {
                     </AdminRoute>
                     <AdminRoute exact path={`${path}/addedTravels`}>
                         <AddedTravel></AddedTravel>
-                    </AdminRoute>
-                    <AdminRoute exact path={`${path}/request`}>
-                        <RequestGet></RequestGet>
                     </AdminRoute>
 
                 </Switch>

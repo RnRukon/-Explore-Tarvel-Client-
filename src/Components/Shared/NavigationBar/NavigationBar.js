@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
-import React, { useReducer } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
@@ -10,22 +10,22 @@ const NavigationBar = () => {
         fontWeight: "bold",
         color: "Yellow"
     }
-    const location = useLocation().pathname;
+
     return (
         <Navbar collapseOnSelect expand="lg" fixed="top" style={{ backgroundColor: 'black' }} variant="dark">
             <Container>
                 <Navbar.Brand as={NavLink} to="/" >
                     <Button sx={{ color: 'yellow' }}>
-                        {location === '/'
-                            ? 'EXPLORE TRAVEL'
-                            : location.toUpperCase().replace('/', '')}
+
+                        EXPLORE TRAVEL
+
                     </Button>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link as={NavLink} style={style} to="/"><Button sx={{ color: 'yellow' }}>Home</Button></Nav.Link>
-                        <Nav.Link as={NavLink} style={style} to="/products"><Button sx={{ color: 'yellow' }}>Products</Button></Nav.Link>
+                        <Nav.Link as={NavLink} style={style} to="/travels"><Button sx={{ color: 'yellow' }}>Travels</Button></Nav.Link>
 
                         {
                             user.email && <Nav.Link as={NavLink} style={style} to="/travelPost"><Button sx={{ color: 'yellow' }}>Travel Post</Button></Nav.Link>

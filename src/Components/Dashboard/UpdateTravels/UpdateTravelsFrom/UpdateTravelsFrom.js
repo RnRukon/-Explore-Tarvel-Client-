@@ -94,6 +94,7 @@ const UpdateTravelsFrom = () => {
                             value={value}
                             precision={0.5}
                             onChange={(event, newValue) => {
+
                                 setValue(newValue === 0 ? rating : newValue);
                             }}
                             onChangeActive={(event, newHover) => {
@@ -103,7 +104,7 @@ const UpdateTravelsFrom = () => {
                         {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>}
                     </div>
 
-                    <input className="form-control rounded-pill  btn-warning shadow-xl " type="submit" value='Update' />
+                    <button type="submit" className="  bg-slate-500 w-full  hover:bg-neutral-600 text-white font-bold py-2 px-4 rounded-full" >Update</button>
 
 
                 </form><br />

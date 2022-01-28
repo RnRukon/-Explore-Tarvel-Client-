@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div
             id="carouselDarkVariant"
-            className="carousel slide carousel-fade carousel-dark relative mt-10"
+            className="carousel slide carousel-fade carousel-dark relative mt-14"
             data-bs-ride="carousel"
         >
             <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
@@ -39,8 +39,8 @@ const Banner = () => {
                         alt="Motorbike Smoke"
                     />
                     <div className="carousel-caption  absolute text-center text-white">
-                        <h5 className="text-xl">First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5 className="text-xl">France Reopens Tourism</h5>
+                        <p style={{ textSizeAdjust: 'auto' }}>The Marvels Of Paris Are Open Now!</p>
                     </div>
                 </div>
 
@@ -52,8 +52,8 @@ const Banner = () => {
                         alt="Mountaintop"
                     />
                     <div className="carousel-caption  absolute text-center text-white">
-                        <h5 className="text-xl">Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5 className="text-xl">Virtual Reality Travel</h5>
+                        <p> Experiences | VR Travel | 360 Production | Visualise</p>
                     </div>
                 </div>
 
@@ -65,8 +65,8 @@ const Banner = () => {
                         alt="Woman Reading a Book"
                     />
                     <div className="carousel-caption absolute text-center text-white">
-                        <h5 className="text-xl">Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5 className="text-xl">Egypt Tours Portal</h5>
+                        <p>4 Main Types of Tourism in Egypt - Egypt Tours Portal</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Grid, LinearProgress, TextField, Typography } from '@mui/material';
+import { Grid, LinearProgress, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import useAuth from '../../Hooks/useAuth';
 import { makeStyles } from '@material-ui/core/styles';
@@ -40,17 +40,17 @@ const AddedTravel = () => {
         setTravelerData(newTravelerData)
 
     }
-    console.log(admin)
+
     const handleAddAProduct = (e) => {
         e.preventDefault();
-
         travelerData.date = new Date().toDateString();
         travelerData.time = new Date().toTimeString();
         travelerData.user = user.displayName;
         travelerData.rating = rating;
         travelerData.role = admin;
+        travelerData.email = user.email;
 
-        console.log(travelerData)
+
         fetch('https://hidden-plains-90674.herokuapp.com/travelPost', {
             method: "POST",
             headers: {
@@ -61,7 +61,6 @@ const AddedTravel = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.insertedId) {
                     alert('Added travel success')
                 }
@@ -70,117 +69,135 @@ const AddedTravel = () => {
         e.target.reset();
     }
     return (
-        <div style={{ height: '100vh', backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover' }} className=' container'>
-            <Typography variant='h4' className='text-pink-600 pt-20'>
-                ADD A Travels Blog
-            </Typography>
+        <div className=' w-screen' style={{ height: '100vh', backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover' }} >
+            <div className=' container'>
+                <Typography variant='h4' className='text-pink-600 pt-20'>
+                    ADD A Travels Blog
+                </Typography>
 
-            <Box className='row'>
-                <Grid className='col-lg-5 mt-lg-5'>
-                    {
-                        isLoading ? <LinearProgress /> :
-                            <form onSubmit={handleAddAProduct}>
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-name-input"
-                                    label="Product Title"
-                                    type="text"
-                                    name="title"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                /> <br />
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-text-input"
-                                    label="Description"
-                                    type="text"
-                                    name="description"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                /> <br />
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-text-input"
-                                    label="IMG URL"
-                                    type="text"
-                                    name="img"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                /> <br />
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-text-input"
-                                    label="Category"
-                                    type="text"
-                                    name="category"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                /> <br />
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-text-input"
-                                    label="Info"
-                                    type="text"
-                                    name="info"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                /> <br />
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-text-input"
-                                    label="Address"
-                                    type="text"
-                                    name="address"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                /> <br />
-                                <TextField
-                                    sx={{ width: 1 }}
-                                    required
-                                    id="standard-number-input"
-                                    label="price"
-                                    type="number"
-                                    name="price"
-                                    variant="standard"
-                                    onBlur={handleOnBlur}
-                                    color="warning"
-                                />
-                                <div className={classes.root}>
-                                    <span>Rating: </span> <Rating
-                                        name="hover-feedback"
-                                        value={rating}
-                                        precision={0.5}
-                                        onChange={(event, newValue) => {
-                                            setRating(newValue);
-                                        }}
-                                        onChangeActive={(event, newHover) => {
-                                            setHover(newHover);
-                                        }}
+                <Box className='row'>
+                    <Grid className='col-lg-5 mt-lg-2'>
+                        {
+                            isLoading ? <LinearProgress /> :
+                                <form onSubmit={handleAddAProduct}>
+                                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                                        Title
+                                    </label>
+                                    <input
+
+                                        required
+                                        id="standard-name-input"
+                                        type="text"
+                                        name="title"
+                                        placeholder='Title'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline"
+                                    /> <br />
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        Description
+                                    </label>
+                                    <input
+
+                                        required
+                                        id="standard-text-input"
+                                        type="text"
+                                        name="description"
+                                        placeholder='Description'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    /> <br />
+
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        IMG URL
+                                    </label>
+                                    <input
+
+                                        required
+                                        id="standard-text-input"
+                                        type="text"
+                                        name="img"
+                                        placeholder='IMG URL'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    /> <br />
+
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        Category
+                                    </label>
+                                    <input
+                                        required
+                                        id="standard-text-input"
+                                        label="Category"
+                                        type="text"
+                                        name="category"
+                                        placeholder='Category'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    /> <br />
+
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        Info
+                                    </label>
+                                    <input
+                                        required
+                                        id="standard-text-input"
+                                        type="text"
+                                        name="info"
+                                        placeholder='Info'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    /> <br />
+
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        Address
+                                    </label>
+                                    <input
+                                        required
+                                        id="standard-text-input"
+                                        type="text"
+                                        name="address"
+                                        placeholder='Address'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    /> <br />
+
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        Cost
+                                    </label>
+                                    <input
+                                        required
+                                        id="standard-number-input"
+                                        type="number"
+                                        name="price"
+                                        placeholder='Cost'
+                                        onBlur={handleOnBlur}
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     />
-                                    {rating !== null && <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>}
-                                </div>
-                                <Button sx={{ width: 1, mt: 5 }} color='error' type="submit" className="feature-button" variant="contained">Add a travel</Button>
-                            </form>
-                    }
+                                    <div className={classes.root}>
+                                        <span>Rating: </span> <Rating
+                                            name="hover-feedback"
+                                            value={rating}
+                                            precision={0.5}
+                                            onChange={(event, newValue) => {
+                                                setRating(newValue);
+                                            }}
+                                            onChangeActive={(event, newHover) => {
+                                                setHover(newHover);
+                                            }}
+                                        />
+                                        {rating !== null && <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>}
+                                    </div>
+                                    <button type="submit" className=" bg-pink-800 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded-full w-full">Add a travel</button>
+                                </form>
+                        }
 
 
-                </Grid>
-                <Grid className="col-lg-7">
+                    </Grid>
+                    <Grid className="col-lg-7">
 
-                </Grid>
-            </Box>
+                    </Grid>
+                </Box>
+            </div>
         </div>
     );
 };

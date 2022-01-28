@@ -22,11 +22,11 @@ const Sitebar = () => {
                     {
                         topRating?.reverse()?.map(topBlog =>
 
-                            <div key={topBlog?._id} className="max-w-sm w-full py-6  cursor-pointer">
+                            <div key={topBlog?._id} className="max-w-sm w-full px-2 py-6  cursor-pointer">
                                 <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-                                    <div className=" bg-center h-56 " >
-                                        <div className="flex justify-end">
-                                            <img src={topBlog?.img} alt="" />
+                                    <div className=" overflow-hidden " >
+                                        <div style={{ height: '200px' }} className="flex justify-end w-full">
+                                            <img className=' w-full' src={topBlog?.img} alt="" />
                                         </div>
                                     </div>
                                     <div className=" p-6 mt-10 flex justify-between">

@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, Button, Grid, LinearProgress, TextField } from '@mui/material';
+import { Alert, AlertTitle, Grid, LinearProgress } from '@mui/material';
 import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
@@ -37,55 +37,51 @@ const Register = () => {
             {
                 isLoading ? <LinearProgress /> :
                     <form onSubmit={handleLoginSubmit}>
-                        <TextField
-                            sx={{ width: 1 }}
+                        <input
+
                             required
                             id="standard-name-input"
-                            label="You Full Name"
                             type="text"
                             name="name"
                             autoComplete="current-name"
-                            variant="standard"
+                            placeholder='You Full Name'
                             onBlur={handleOnBlur}
-                            color="secondary"
+                            className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                         /> <br />
-                        <TextField
-                            sx={{ width: 1 }}
+                        <input
                             required
                             id="standard-email-input"
                             label="You Email"
                             type="email"
                             name="email"
+                            placeholder='email'
                             autoComplete="current-email"
-                            variant="standard"
                             onBlur={handleOnBlur}
-                            color="secondary"
+                            className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                         /> <br />
-                        <TextField
-                            sx={{ width: 1 }}
+                        <input
                             required
                             id="standard-password-input"
-                            label="Password"
                             type="password"
                             name="password"
+                            placeholder='password'
                             autoComplete="current-password"
-                            variant="standard"
                             onBlur={handleOnBlur}
-                            color="secondary"
+                            className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+
                         />
-                        <TextField
-                            sx={{ width: 1 }}
+                        <input
                             required
                             id="standard-password-input"
-                            label="Re-type Password"
                             type="password"
                             name="rePassword"
                             autoComplete="current-password"
-                            variant="standard"
+                            placeholder='RePassword'
                             onBlur={handleOnBlur}
-                            color="secondary"
+                            className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+
                         />
-                        <Button color="secondary" sx={{ width: 1, mt: 5 }} type="submit" variant="contained">Register</Button>
+                        <button type="submit" className=" bg-cyan-700 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Register</button>
                     </form>
             }
 

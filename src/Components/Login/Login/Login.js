@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, AlertTitle, Button, Grid, TextField } from '@mui/material';
+import { Alert, AlertTitle, Grid } from '@mui/material';
 import useAuth from '../../Hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 
@@ -20,42 +20,40 @@ const Login = () => {
     const handleLoginSubmit = async (e) => {
         e.preventDefault()
         await loginUser(loginData.email, loginData.password, location, history)
-
         e.target.reset();
     }
     return (
         <Grid sx={{ mt: 12 }}>
             <form onSubmit={handleLoginSubmit}>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Email
+                    </label>
+                    <input
 
-                <TextField
-                    sx={{ width: 1 }}
-                    required
-                    id="standard-password-email"
-                    label="You Email"
-                    type="email"
-                    name="email"
-                    autoComplete="current-email"
-                    variant="standard"
-                    onChange={login}
-                    color="secondary"
+                        required
+                        id="standard-password-email"
+                        type="email"
+                        name="email"
+                        autoComplete="current-email"
+                        onChange={login}
+                        placeholder="Email"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 
-                ></TextField> <br />
-                <TextField
-                    sx={{ width: 1 }}
+                    ></input>
+                </div>
+                <input
                     required
                     id="standard-password-input"
-                    label="Password"
                     type="password"
                     name="password"
                     autoComplete="current-password"
-                    variant="standard"
                     onChange={login}
-                    color="secondary"
-                />
-                <Button color="secondary" type="submit" sx={{ width: 1, mt: 5 }} variant="contained">Login</Button>
-
+                    placeholder="Password"
+                    className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                /> <br /> <br />
+                <button type="submit" className=" bg-cyan-700 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" variant="contained">Login</button>
             </form>
-
 
             {authError && <Alert severity="error">
                 <AlertTitle>Error</AlertTitle>

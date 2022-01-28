@@ -13,7 +13,7 @@ const TravelsDetails = () => {
             .then(data => seTravel(data))
     }, [id])
 
-    console.log(travel)
+
     return (
         <div>
             <NavigationBar />

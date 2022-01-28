@@ -35,9 +35,9 @@ const Travelers = () => {
 
                             <div key={travel?._id} className="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-3 cursor-pointer">
                                 <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-                                    <div className="bg-cover bg-center h-56 " >
-                                        <div className="flex justify-end">
-                                            <img src={travel?.img} alt="" />
+                                    <div className=" overflow-hidden " >
+                                        <div style={{ height: '200px' }} className="flex justify-end w-full">
+                                            <img className=' w-full' src={travel?.img} alt="" />
                                         </div>
                                     </div>
                                     <div className="p-4 flex justify-between">

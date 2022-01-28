@@ -6,7 +6,7 @@ import NavigationBar from '../../Shared/NavigationBar/NavigationBar';
 const TravelPost = () => {
     return (
 
-        <div className=''>
+        <div className=' w-full'>
             <NavigationBar />
 
             <AddedTravel></AddedTravel>

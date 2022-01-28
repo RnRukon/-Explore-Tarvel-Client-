@@ -3,7 +3,6 @@ import useAuth from '../../Hooks/useAuth';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import { useHistory, useLocation } from 'react-router';
-import Button from '@mui/material/Button';
 import { Grid, Switch, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Container } from 'react-bootstrap';
@@ -37,7 +36,7 @@ const LoginToggle = () => {
                             <Typography defaultChecked sx={{ textAlign: 'center', my: 2, color: 'darkorange' }}>
                                 -----------------or------------------
                             </Typography>
-                            <Button sx={{ width: 1 }} onClick={() => signInWithGoogle(location, history)} variant="contained"><GoogleIcon />Google Sing In</Button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4focus:outline-none focus:shadow-outline w-full rounded-full" type="button" onClick={() => signInWithGoogle(location, history)} variant="contained"><GoogleIcon />Google Sing In</button>
 
                             <Box sx={{ mt: 5 }}>
                                 {

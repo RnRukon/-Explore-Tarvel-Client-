@@ -1,6 +1,5 @@
-import { Alert, TextField, Typography } from '@mui/material';
+import { Alert, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 
 const MakeAdmin = () => {
@@ -40,14 +39,18 @@ const MakeAdmin = () => {
                             <Alert severity="success">Admin add Success</Alert>
 
                         }
-                        <TextField
-                            color="secondary"
-                            sx={{ width: 1 }}
-                            label="Email"
+
+                        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                            Email
+                        </label>
+                        <input
+
                             type="email"
                             onBlur={emailOnBlur}
-                            variant="standard" />
-                        <Button sx={{ width: 1, mt: 5 }} color="secondary" type='submit' variant='contained' >Add Admin</Button>
+                            placeholder="Email"
+                            className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                        <button type='submit' className=" bg-cyan-700 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Add Admin</button>
 
                     </form>
                 </Box>

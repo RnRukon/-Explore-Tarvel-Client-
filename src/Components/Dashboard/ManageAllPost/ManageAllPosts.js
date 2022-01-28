@@ -41,7 +41,7 @@ const ManageAllPosts = () => {
             .then(data => {
 
                 if (data.modifiedCount) {
-
+                    alert('Approved Success')
                     fetch('https://hidden-plains-90674.herokuapp.com/travels')
                         .then(res => res.json())
                         .then(data => setTravels(data))
@@ -70,7 +70,14 @@ const ManageAllPosts = () => {
     };
     return (
         <section className="text-gray-600">
-
+            {currentPosts?.length === 0 ?
+                <h4 className=' text-pink-800 text-center'>No posts found {currentPosts?.length}</h4>
+                :
+                <h1 className=' text-pink-600 text-center'>Post Found: {currentPosts?.length} </h1>
+            }
+            {
+                !currentPosts?.length && <img src="https://cdn.wallpapersafari.com/99/54/lsZuYi.jpg" alt="" />
+            }
             <div className="max-w-6xl mx-auto">
                 <div className=" flex justify-around flex-wrap">
                     {
@@ -78,9 +85,9 @@ const ManageAllPosts = () => {
 
                             <div key={travel?._id} className="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-3 cursor-pointer">
                                 <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-                                    <div className="bg-cover bg-center h-56 " >
-                                        <div className="flex justify-end">
-                                            <img src={travel?.img} alt="" />
+                                    <div className=" overflow-hidden " >
+                                        <div style={{ height: '200px' }} className="flex justify-end w-full">
+                                            <img className=' w-full' src={travel?.img} alt="" />
                                         </div>
                                     </div>
                                     <div className="p-4 flex justify-between">

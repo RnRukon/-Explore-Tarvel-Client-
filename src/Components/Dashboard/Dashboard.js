@@ -23,7 +23,6 @@ import AdminRoute from './AdminRoute/AdminRoute';
 import { Switch, Route, Link, useRouteMatch, useLocation } from "react-router-dom";
 import Review from './UserDashboard/Review/Review';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import PreviewIcon from '@mui/icons-material/Preview';
 import LogoutIcon from '@mui/icons-material/Logout';
 import useAuth from '../Hooks/useAuth';
@@ -58,6 +57,11 @@ function ResponsiveDrawer(props) {
             </Link>
             <List>
                 {!admin && <Box>
+                    <Link to={`${url}`} className="text-decoration-none">
+                        <ListItem button>
+                            <PreviewIcon />My Post
+                        </ListItem>
+                    </Link>
                     <Link to={`${url}/review`} className="text-decoration-none">
                         <ListItem button>
                             <PreviewIcon />Review

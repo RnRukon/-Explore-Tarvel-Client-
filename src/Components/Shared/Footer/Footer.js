@@ -167,8 +167,9 @@ const Footer = () => {
                 </div>
             </div>
             <div className="text-center p-6 bg-gray-200">
-                <span>© 2021 Copyright:</span>
-                <a className="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Tailwind Elements</a>
+                <small>{new Date().toLocaleDateString().slice(5, 9)} &copy;Copyright </small>
+
+                <a className="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Explore Travel</a>
             </div>
         </footer>
     );

@@ -13,6 +13,7 @@ import TravelsDetails from './Components/Home/Travelers/TravelsDetails/TravelsDe
 import TravelPost from "./Components/Home/TravelPost/TravelPost";
 import PrivateRoute from "./Components/Login/LoginToggle/PrivateRoute/PrivateRoute";
 import Travels from "./Components/Home/Trevels/Trevels";
+import NotFound from "./Components/Home/NotFound/NotFound";
 
 
 
@@ -47,7 +48,9 @@ function App() {
             <PrivateRoute path='/dashboard'>
               <Dashboard />
             </PrivateRoute>
-
+            <Route exact path='*'>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
 

@@ -78,7 +78,7 @@ const UpdateTravels = () => {
                                     <p className="text-3xl text-red-500">${travel?.price}</p>
 
                                 </div>
-                                <div className=' flex justify-between px-4'>
+                                <div className=' flex border-t justify-between px-4 items-center'>
                                     <Link to={`travelsDetails/${travel?._id}`}><Button>Details</Button></Link>
                                     <Rating
 

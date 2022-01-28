@@ -40,7 +40,7 @@ const MakeAdmin = () => {
 
                         }
 
-                        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        <label className="block text-gray-700 text-sm font-bold mb-2">
                             Email
                         </label>
                         <input

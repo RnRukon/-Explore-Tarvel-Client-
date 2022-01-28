@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { Alert, AlertTitle, Button, Grid, LinearProgress, TextField, Typography } from '@mui/material';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
@@ -67,11 +66,7 @@ const UpdateTravelsFrom = () => {
     return (
         <div className=' h-screen update-form-bg'>
             <h1 className='text-yellow-400  text-center fw-bold underline uppercase py-11'>Update Products</h1>
-            <div className='col-lg-6'>
-                <div>
 
-                </div>
-            </div>
 
             <div className='container-fluid col-lg-6 bg-white card card-body p-3 shadow-2xl'>
                 <form onSubmit={handleSubmit(update)}>

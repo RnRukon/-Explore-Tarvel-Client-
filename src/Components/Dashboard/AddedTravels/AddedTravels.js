@@ -69,13 +69,13 @@ const AddedTravel = () => {
         e.target.reset();
     }
     return (
-        <div className=' w-screen ' style={{ height: '100vh', backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover' }} >
+        <div className='h-full pb-6 ' style={{ backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
             <div className=' container'>
                 <Typography variant='h4' className='text-pink-600 pt-20'>
                     ADD A Travels Blog
                 </Typography>
 
-                <Box className='row'>
+                <Box className='row '>
                     <Grid className='col-lg-5 mt-lg-2'>
                         {
                             isLoading ? <LinearProgress /> :
@@ -193,9 +193,7 @@ const AddedTravel = () => {
 
 
                     </Grid>
-                    <Grid className="col-lg-7">
 
-                    </Grid>
                 </Box>
             </div>
         </div>

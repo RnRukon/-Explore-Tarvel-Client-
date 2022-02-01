@@ -3,7 +3,6 @@ import Banner from '../Shared/Banner/Banner';
 import Footer from '../Shared/Footer/Footer';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import Sitebar from './Sitebar/Sitebar';
-import Test from './Test';
 import Travelers from './Travelers/Travelers';
 
 const Home = () => {
@@ -19,8 +18,6 @@ const Home = () => {
                     <Sitebar />
                 </div>
             </div>
-            <Test />
-
             <Footer />
         </div>
     );

@@ -53,6 +53,7 @@ const UpdateTravelsFrom = () => {
     let history = useHistory();
     const update = (data) => {
         data.rating = value;
+        data.role = true;
         axios.put(`https://hidden-plains-90674.herokuapp.com/UpdateTravelsFrom/${id}`, data)
             .then(res => {
                 if (res?.data?.modifiedCount) {

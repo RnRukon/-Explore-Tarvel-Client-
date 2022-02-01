@@ -1,7 +1,7 @@
 # Explore Travels
  
 # Live Site:
-(https://github.com/facebook/create-react-app)
+(https://explore-travel-df23a.web.app)
 
 ## Server Site Code:
 (https://github.com/RnRukon/Explore-Tarvel-server)
@@ -35,7 +35,7 @@ Add a field to add a description.
 Add a field to give a category 
 cost of the travel
 Location address
-Admin’s all activity is protected page after complete log in then can do admin activity. [use email: test@test.com and password: #2021dev as password for default admin. (custom authentication)]
+Admin’s all activity is protected page after complete log in then can do admin activity.(custom authentication)]
 
 * Additional information:
 Use react.js for the frontend. You are free to use any CSS library you want. But, we recommend using Tailwind CSS.

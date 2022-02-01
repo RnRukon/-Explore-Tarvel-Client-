@@ -29,6 +29,7 @@ import useAuth from '../Hooks/useAuth';
 import AddedTravel from './AddedTravels/AddedTravels';
 import ManageAllPosts from './ManageAllPost/ManageAllPosts';
 import MyPosts from './UserDashboard/MyPost/MyPosts';
+import TravelsDetails from '../Home/Travelers/TravelsDetails/TravelsDetails';
 
 const drawerWidth = 240;
 
@@ -40,8 +41,6 @@ function ResponsiveDrawer(props) {
         setMobileOpen(!mobileOpen);
     };
     let { path, url } = useRouteMatch();
-
-    const location = useLocation().pathname;
 
     const drawer = (
         <div>
@@ -108,7 +107,7 @@ function ResponsiveDrawer(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', overflow: 'hidden' }}>
             <CssBaseline />
             <AppBar
 
@@ -132,9 +131,7 @@ function ResponsiveDrawer(props) {
 
                     <Typography variant="h6" noWrap component="div">
 
-                        {location === '/'
-                            ? ' Dashboard'
-                            : location.toUpperCase().replace('/', '')}
+                        Dashboard
 
                     </Typography>
 
@@ -202,6 +199,9 @@ function ResponsiveDrawer(props) {
                     </AdminRoute>
                     <AdminRoute exact path={`${path}/UpdateTravels`}>
                         <UpdateTravels></UpdateTravels>
+                    </AdminRoute>
+                    <AdminRoute exact path={`${path}/travelsDetails/:id`}>
+                        <TravelsDetails></TravelsDetails>
                     </AdminRoute>
                     <AdminRoute exact path={`${path}/updateTravelsFrom/:id`}>
                         <UpdateTravelsFrom></UpdateTravelsFrom>

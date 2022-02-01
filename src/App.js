@@ -21,7 +21,7 @@ import NotFound from "./Components/Home/NotFound/NotFound";
 function App() {
 
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
 
       <AuthProvider>
         <Router>

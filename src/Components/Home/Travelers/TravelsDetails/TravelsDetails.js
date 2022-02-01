@@ -44,7 +44,7 @@ const TravelsDetails = () => {
                             </Box>
                             <Divider />
                             <Typography className=' text-justify'><h4 className=' text-2xl text-cyan-500'>Info:</h4> {travel?.info}</Typography>
-
+                            <button onClick={() => window.history.back()} className=" bg-cyan-700 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Go to Back</button>
 
                             <Box className='mt-5'>
                                 <Typography variant='h4' color='secondary'>Contact informations</Typography>

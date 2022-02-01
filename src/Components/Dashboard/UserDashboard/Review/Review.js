@@ -91,16 +91,15 @@ const Review = () => {
                         isLoading ? <LinearProgress /> :
                             <form onSubmit={handleReviewPost}>
 
-                                <TextField
-                                    color="secondary"
-                                    sx={{ width: 1 }}
+                                <input
+
                                     required
                                     id="standard-required"
-                                    label="Write uer Comment"
+                                    placeholder='Comment'
                                     variant="standard"
                                     name="comment"
                                     onBlur={handleOnBlur}
-
+                                    className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                 /><br />
                                 <Box
                                     sx={{
@@ -126,7 +125,7 @@ const Review = () => {
                                     )}
                                 </Box> <br />
 
-                                <Button color="warning" sx={{ width: 1, mt: 5 }} type="submit" className="feature-button" variant="contained">Review</Button>
+                                <button type="submit" className=" bg-cyan-700 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Review</button>
                             </form>
                     }
 

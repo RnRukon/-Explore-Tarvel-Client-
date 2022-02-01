@@ -69,7 +69,7 @@ const AddedTravel = () => {
         e.target.reset();
     }
     return (
-        <div className=' w-screen' style={{ height: '100vh', backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover' }} >
+        <div className=' w-screen ' style={{ height: '100vh', backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover' }} >
             <div className=' container'>
                 <Typography variant='h4' className='text-pink-600 pt-20'>
                     ADD A Travels Blog

@@ -31,7 +31,7 @@ const finalSpaceCharacters = [
 ]
 
 function Test() {
-    const [characters, updateCharacters] = useState([]);
+    const [characters, updateCharacters] = useState(finalSpaceCharacters);
 
     function handleOnDragEnd(result) {
         if (!result.destination) return;

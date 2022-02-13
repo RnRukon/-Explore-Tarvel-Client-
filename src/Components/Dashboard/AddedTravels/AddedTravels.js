@@ -1,10 +1,32 @@
 import React, { useState } from 'react';
-import { Grid, LinearProgress, Typography } from '@mui/material';
+import { Grid, LinearProgress, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import useAuth from '../../Hooks/useAuth';
 import { makeStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
+import { styled } from '@mui/material/styles';
+import uploadImage from '../../Hooks/useImgBbImgUpload';
 
+
+const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: 'orange',
+        },
+        '&:hover fieldset': {
+            borderColor: 'hotpink',
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: 'green',
+        },
+    },
+});
 
 const labels = {
     0.5: 'Useless',
@@ -26,12 +48,15 @@ const useStyles = makeStyles({
     },
 });
 const AddedTravel = () => {
+    const [img, setImg] = React.useState('');
     const [travelerData, setTravelerData] = useState({});
     const { user, isLoading } = useAuth();
     const [rating, setRating] = React.useState(2);
     const [hover, setHover] = React.useState(-1);
     const classes = useStyles();
     const { admin } = useAuth();
+
+
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -48,6 +73,7 @@ const AddedTravel = () => {
         travelerData.user = user.displayName;
         travelerData.rating = rating;
         travelerData.role = admin;
+        travelerData.img = img;
         travelerData.email = user.email;
 
 
@@ -68,6 +94,16 @@ const AddedTravel = () => {
 
         e.target.reset();
     }
+
+
+
+    const handleImgUpload = img => {
+        uploadImage(img)
+            .then(res => {
+                setImg(res.data.data.url);
+            })
+    }
+
     return (
         <div className='h-full pb-6 ' style={{ backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
             <div className=' container'>
@@ -107,19 +143,7 @@ const AddedTravel = () => {
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     /> <br />
 
-                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
-                                        IMG URL
-                                    </label>
-                                    <input
 
-                                        required
-                                        id="standard-text-input"
-                                        type="text"
-                                        name="img"
-                                        placeholder='IMG URL'
-                                        onBlur={handleOnBlur}
-                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    /> <br />
 
                                     <label className="block text-gray-700 text-sm font-bold mb-2" >
                                         Category
@@ -173,6 +197,16 @@ const AddedTravel = () => {
                                         onBlur={handleOnBlur}
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     />
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >
+                                        IMG URL
+                                    </label>
+
+                                    <CssTextField
+                                        sx={{ width: 1 }}
+                                        accept="image/png, image/jpg, image/jpeg"
+                                        type="file"
+                                        onChange={e => handleImgUpload(e.target.files[0])} />
+                                    <br />
                                     <div className={classes.root}>
                                         <span>Rating: </span> <Rating
                                             name="hover-feedback"

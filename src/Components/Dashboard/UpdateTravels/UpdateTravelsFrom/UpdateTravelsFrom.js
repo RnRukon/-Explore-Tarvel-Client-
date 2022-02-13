@@ -6,6 +6,29 @@ import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
+import uploadImage from '../../../Hooks/useImgBbImgUpload';
+import { styled } from '@mui/material/styles';
+import { TextField } from '@mui/material';
+
+const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: 'orange',
+        },
+        '&:hover fieldset': {
+            borderColor: 'hotpink',
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: 'green',
+        },
+    },
+});
 
 const labels = {
     0.5: 'Useless',
@@ -36,6 +59,7 @@ const UpdateTravelsFrom = () => {
     const [value, setValue] = React.useState(0);
     const [hover, setHover] = React.useState(-1);
     const classes = useStyles();
+    const [imgs, setImgs] = React.useState('');
 
     useEffect(() => {
         fetch(`https://hidden-plains-90674.herokuapp.com/travel/${id}`)
@@ -53,6 +77,7 @@ const UpdateTravelsFrom = () => {
     let history = useHistory();
     const update = (data) => {
         data.rating = value;
+        data.img = imgs
         data.role = true;
         axios.put(`https://hidden-plains-90674.herokuapp.com/UpdateTravelsFrom/${id}`, data)
             .then(res => {
@@ -63,6 +88,13 @@ const UpdateTravelsFrom = () => {
             })
 
         reset();
+    }
+
+    const handleImgUpload = img => {
+        uploadImage(img)
+            .then(res => {
+                setImgs(res.data.data.url);
+            })
     }
     return (
         <div className=' h-screen update-form-bg'>
@@ -76,12 +108,19 @@ const UpdateTravelsFrom = () => {
 
                     <input className="form-control rounded-pill" {...register('description', { required: true })} placeholder="Description" defaultValue={description} /> <br />
 
-                    <input className="form-control rounded-pill" {...register('img', { required: true })} placeholder="Img URL" defaultValue={img} /> <br />
+                    {/* <input className="form-control rounded-pill" {...register('img', { required: true })} placeholder="Img URL" defaultValue={img} /> <br /> */}
                     <input className="form-control rounded-pill" {...register('category', { required: true })} placeholder="Category" defaultValue={category} /> <br />
                     <input className="form-control rounded-pill" {...register('info', { required: true })} placeholder="Info" defaultValue={info} /> <br />
                     <input className="form-control rounded-pill" {...register('address', { required: true })} placeholder="Address" defaultValue={address} /> <br />
 
                     <input className="form-control rounded-pill" {...register('price', { required: true })} placeholder="Price" defaultValue={price} /> <br />
+                    <img style={{ width: "100px", marginBottom: "5px" }} src={img} alt="" />
+                    <CssTextField
+                        sx={{ width: 1 }}
+                        accept="image/png, image/jpg, image/jpeg"
+                        type="file"
+                        onChange={e => handleImgUpload(e.target.files[0])} />
+
 
                     <div className={classes.root}>
                         <Rating

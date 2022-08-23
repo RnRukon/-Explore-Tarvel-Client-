@@ -7,7 +7,6 @@ const Travels = () => {
     return (
         <div>
             <NavigationBar />
-            <h1 className=' mt-20 text-3xl text-center text-fuchsia-500 font-bold'>Travel Blogs</h1>
             <Travelers />
             <Footer />
         </div>

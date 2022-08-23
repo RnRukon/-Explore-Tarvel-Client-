@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from './Pagination';
-
+import Banner from "./img/travel-banner-landmarks-airplane-around-world-tourism-background-vector-illustration-109951098.jpg"
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 const Travelers = () => {
     const [travels, setTravels] = useState([])
@@ -39,8 +39,14 @@ const Travelers = () => {
 
     return (
         <section className="text-gray-600">
+ <br /><br />
+            <div>
+                <img className='w-full h-full' src={Banner} alt="" />
+            </div>
 
-
+          <div>
+           
+          </div>
             <div >
                 <DragDropContext onDragEnd={handleOnDragEnd}>
                     <Droppable droppableId="characters">

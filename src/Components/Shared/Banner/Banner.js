@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Banner1 from "../../Home/Travelers/img/travel-tourism-banner-trip-insurance-online-tours-international-flights-plane-suitcase-luggage-sunglasses-blue-253108658.jpg"
+import Banner2 from "../../Home/Travelers/img/banner-travel-tourism-gastronomic-tours-trips-to-wineries-holidays-countryside-hand-airplane-background-246463642.jpg"
+import Banner3 from "../../Home/Travelers/img/tours-travelers-banner-online-travel-agency-website-airplane-luggage-passport-globe-blue-background-copy-space-251816923.jpg"
 const Banner = () => {
     return (
         <div
@@ -28,13 +30,13 @@ const Banner = () => {
             </div>
 
 
-
+{/* https://i.ibb.co/j3jJ3kM/Intrepid-Travel-Morocco-Sahara-camel-ride.jpg */}
 
             <div className="carousel-inner relative w-full overflow-hidden">
 
                 <div className="carousel-item active relative float-left w-full">
                     <img
-                        src="https://i.ibb.co/j3jJ3kM/Intrepid-Travel-Morocco-Sahara-camel-ride.jpg"
+                        src={Banner1}
                         className="block w-full"
                         alt="Motorbike Smoke"
                     />
@@ -47,7 +49,8 @@ const Banner = () => {
 
                 <div className="carousel-item relative float-left w-full">
                     <img
-                        src="https://i.ibb.co/XjGZCwV/182-1826005-family-travel-photos-hd.jpg"
+                        // src="https://i.ibb.co/XjGZCwV/182-1826005-family-travel-photos-hd.jpg"
+                        src={Banner2}
                         className="block w-full"
                         alt="Mountaintop"
                     />
@@ -60,7 +63,8 @@ const Banner = () => {
 
                 <div className="carousel-item relative float-left w-full">
                     <img
-                        src="https://i.ibb.co/6tsk4yd/Sahara-Desert-Morocco-Berbers.jpg"
+                        src={Banner3}
+                        // src="https://i.ibb.co/6tsk4yd/Sahara-Desert-Morocco-Berbers.jpg"
                         className="block w-full"
                         alt="Woman Reading a Book"
                     />

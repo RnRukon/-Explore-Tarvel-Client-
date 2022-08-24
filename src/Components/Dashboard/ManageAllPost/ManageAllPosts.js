@@ -70,15 +70,17 @@ const ManageAllPosts = () => {
     };
     return (
         <section className="text-gray-600">
-            {currentPosts?.length === 0 ?
-                <h4 className=' text-pink-800 text-center'>No posts found {currentPosts?.length}</h4>
-                :
-                <h1 className=' text-pink-600 text-center'>Post Found: {currentPosts?.length} </h1>
-            }
-            {
-                !currentPosts?.length && <img src="https://cdn.wallpapersafari.com/99/54/lsZuYi.jpg" alt="" />
-            }
+
+
             <div className="max-w-6xl mx-auto">
+                <div className=' mt-10'>
+                    {currentPosts?.length === 0 ?
+                        <h1 className=' text-gray-600 text-center text-3xl fw-bold'>No posts found {currentPosts?.length}</h1>
+                        :
+                        <h1 className=' text-gray-600 text-center text-3xl fw-bold'>Post Found: {currentPosts?.length} </h1>
+                    }
+                </div>
+              
                 <div className=" flex justify-around flex-wrap">
                     {
                         currentPosts?.reverse()?.map(travel =>

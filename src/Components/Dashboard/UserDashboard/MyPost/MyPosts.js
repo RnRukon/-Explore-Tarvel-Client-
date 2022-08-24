@@ -46,14 +46,12 @@ const MyPosts = () => {
         <div >
 
             {currentPosts?.length === 0 ?
-                <h4 className=' text-pink-800 text-center'>No posts found for you, please post first</h4>
+                <h1 className='  text-gray-600 text-center'>No posts found for you, please post first</h1>
                 :
-                <h1 className=' text-pink-600 text-center'>My Post {currentPosts?.length} </h1>
+                <h1 className=' text-gray-600 text-center'>My Post {currentPosts?.length} </h1>
             }
 
-            {
-                !currentPosts?.length && <img src="https://cdn.wallpapersafari.com/99/54/lsZuYi.jpg" alt="" />
-            }
+
             <section className="text-gray-600">
 
                 <div className="max-w-6xl mx-auto">

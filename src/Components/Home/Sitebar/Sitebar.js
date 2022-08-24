@@ -16,7 +16,7 @@ const Sitebar = () => {
 
     return (
         <div >
-            <h1 className=' text-3xl  text-center pt-4  font-bold border-b mb-3'>Top travel </h1>
+            {topRating && <h1 className=' text-3xl  text-center pt-4  font-bold border-b mb-3 text-slate-500'>Top travel </h1>}
             <div className=' flex justify-center  overflow-y-auto max-h-screen scroll-b' >
                 <div>
                     {
@@ -43,7 +43,7 @@ const Sitebar = () => {
                                             precision={0.5}
                                             readOnly
                                         />
-                                        
+
                                     </div>
 
                                 </div>

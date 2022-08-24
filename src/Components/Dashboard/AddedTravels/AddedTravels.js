@@ -1,32 +1,14 @@
 import React, { useState } from 'react';
-import { Grid, LinearProgress, TextField, Typography } from '@mui/material';
+import { Grid, LinearProgress, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import useAuth from '../../Hooks/useAuth';
 import { makeStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
-import { styled } from '@mui/material/styles';
 import uploadImage from '../../Hooks/useImgBbImgUpload';
-
-
-const CssTextField = styled(TextField)({
-    '& label.Mui-focused': {
-        color: 'green',
-    },
-    '& .MuiInput-underline:after': {
-        borderBottomColor: 'green',
-    },
-    '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: 'orange',
-        },
-        '&:hover fieldset': {
-            borderColor: 'hotpink',
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: 'green',
-        },
-    },
-});
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import imgIcon from "./img/Travel.jpg"
 
 const labels = {
     0.5: 'Useless',
@@ -105,9 +87,9 @@ const AddedTravel = () => {
     }
 
     return (
-        <div className='h-full pb-6 ' style={{ backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
+        <div className=' h-screen pb-6 ' style={{ backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
             <div className=' container'>
-                <Typography variant='h4' className='text-pink-600 pt-20'>
+                <Typography variant='h4' className= ' text-gray-600 pt-20'>
                     ADD A Travels Blog
                 </Typography>
 
@@ -201,11 +183,24 @@ const AddedTravel = () => {
                                         IMG URL
                                     </label>
 
-                                    <CssTextField
-                                        sx={{ width: 1 }}
-                                        accept="image/png, image/jpg, image/jpeg"
-                                        type="file"
-                                        onChange={e => handleImgUpload(e.target.files[0])} />
+
+                                    <Stack direction="row" alignItems="center" spacing={2}>
+
+                                        <IconButton color="primary" className='w-1/5' aria-label="upload picture" component="label">
+                                            <input hidden accept="image/png, image/jpg, image/jpeg" type="file"
+                                                onChange={(e) => handleImgUpload(e.target.files[0])}
+                                            />
+                                           
+                                            <div>
+                                                <img style={{ position: 'relative' }}  src={img ? img : imgIcon} alt="" />
+                                                <p style={{ position: 'absolute', top: "50%", left: '50%', bottom: '50%', color: 'white' }}><PhotoCamera /> </p>
+                                            </div>
+                                        </IconButton>
+                                    </Stack>
+
+                                   
+
+
                                     <br />
                                     <div className={classes.root}>
                                         <span>Rating: </span> <Rating
@@ -221,7 +216,7 @@ const AddedTravel = () => {
                                         />
                                         {rating !== null && <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>}
                                     </div>
-                                    <button type="submit" className=" bg-pink-800 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded-full w-full">Add a travel</button>
+                                    <button type="submit" className=" bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full w-full">Add a travel</button>
                                 </form>
                         }
 

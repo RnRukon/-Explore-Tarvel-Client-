@@ -20,7 +20,7 @@ import MakeAdmin from './MakeAdmin/MakeAdmin';
 import UpdateTravels from './UpdateTravels/UpdateTravels';
 import UpdateTravelsFrom from './UpdateTravels/UpdateTravelsFrom/UpdateTravelsFrom'
 import AdminRoute from './AdminRoute/AdminRoute';
-import { Switch, Route, Link, useRouteMatch, useLocation } from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import Review from './UserDashboard/Review/Review';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PreviewIcon from '@mui/icons-material/Preview';
@@ -30,9 +30,19 @@ import AddedTravel from './AddedTravels/AddedTravels';
 import ManageAllPosts from './ManageAllPost/ManageAllPosts';
 import MyPosts from './UserDashboard/MyPost/MyPosts';
 import TravelsDetails from '../Home/Travelers/TravelsDetails/TravelsDetails';
+import "./Dashboard.css"
+import { makeStyles } from '@material-ui/core/styles';
+ const drawerWidth = 240;
 
-const drawerWidth = 240;
 
+
+const useStyles = makeStyles({
+    paper: {
+        background: '#c3e6f7',
+        color: '#4b5563',
+        fontWeight:'bold'
+    }
+});
 function ResponsiveDrawer(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -41,27 +51,27 @@ function ResponsiveDrawer(props) {
         setMobileOpen(!mobileOpen);
     };
     let { path, url } = useRouteMatch();
-
+    const styles = useStyles();
     const drawer = (
         <div>
 
             <ListItem button>
-                <AccountCircleIcon className=' text-pink-700' /> <Typography variant="h6" className=' text-pink-700'>{user.displayName}</Typography>
+                <AccountCircleIcon className=' text-cyan-800' /> <Typography variant="h6" className=' text-cyan-800'>{user.displayName}</Typography>
             </ListItem>
             <Toolbar />
             <Divider />
-            <Link to='/' className="text-decoration-none"> <ListItem button>
+            <Link to='/' className="text-decoration-none hover:text-cyan-600 "> <ListItem button>
                 <HomeIcon />Go to Home
             </ListItem>
             </Link>
             <List>
                 {!admin && <Box>
-                    <Link to={`${url}`} className="text-decoration-none">
+                    <Link to={`${url}`} className="text-decoration-none hover:text-cyan-600 ">
                         <ListItem button>
                             <PreviewIcon />My Post
                         </ListItem>
                     </Link>
-                    <Link to={`${url}/review`} className="text-decoration-none">
+                    <Link to={`${url}/review`} className="text-decoration-none hover:text-cyan-600 ">
                         <ListItem button>
                             <PreviewIcon />Review
                         </ListItem>
@@ -69,23 +79,23 @@ function ResponsiveDrawer(props) {
                 </Box>}
 
                 {admin && <Box>
-                    <Link to={`${url}`} className="text-decoration-none">
-                        <ListItem button>
+                    <Link to={`${url}`} className="text-decoration-none  hover:text-cyan-600 ">
+                        <ListItem button >
                             <AdminPanelSettingsIcon />   Manage All Post
                         </ListItem>
                     </Link>
-                    <Link to={`${url}/makeAdmin`} className="text-decoration-none">
+                    <Link to={`${url}/makeAdmin`} className="text-decoration-none hover:text-cyan-600 ">
                         <ListItem button>
                             <AdminPanelSettingsIcon />  Make Admin
                         </ListItem>
                     </Link>
 
-                    <Link to={`${url}/UpdateTravels`} className="text-decoration-none">
+                    <Link to={`${url}/UpdateTravels`} className="text-decoration-none hover:text-cyan-600 ">
                         <ListItem button>
                             <AddPhotoAlternateIcon /> Update Travels
                         </ListItem>
                     </Link>
-                    <Link to={`${url}/addedTravels`} className="text-decoration-none">
+                    <Link to={`${url}/addedTravels`} className="text-decoration-none hover:text-cyan-600 ">
                         <ListItem button>
                             <LogoutIcon />  Add a Travels
                         </ListItem>
@@ -94,8 +104,8 @@ function ResponsiveDrawer(props) {
                 </Box>}
 
                 <ListItem button onClick={logOut} >
-                    <ListItemIcon className='text-blue-600'>
-                        <InboxIcon className='text-blue-600' /><span className='text-blue-600'>Logout</span>
+                    <ListItemIcon className='hover:text-cyan-600 '>
+                        <InboxIcon /><span >Logout</span>
                     </ListItemIcon>
                 </ListItem>
             </List>
@@ -107,7 +117,7 @@ function ResponsiveDrawer(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex', overflow: 'hidden' }}>
+        <Box sx={{ display: 'flex ' }} className='h-screen overflow-y-auto overflow-x-hidden DashboardBG'>
             <CssBaseline />
             <AppBar
 
@@ -115,7 +125,8 @@ function ResponsiveDrawer(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
-                    display: 'flex'
+                    display: 'flex',
+                    bgcolor:'#008eae'
                 }}
             >
                 <Toolbar>
@@ -150,6 +161,7 @@ function ResponsiveDrawer(props) {
                 <Drawer
 
                     container={container}
+                    classes={{ paper: styles.paper }}
                     variant="temporary"
                     open={mobileOpen}
                     onClose={dashboard}
@@ -167,6 +179,8 @@ function ResponsiveDrawer(props) {
                     {drawer}
                 </Drawer>
                 <Drawer
+                    classes={{ paper: styles.paper }}
+
                     variant="permanent"
                     sx={{
                         display: { xs: 'none', sm: 'block' },

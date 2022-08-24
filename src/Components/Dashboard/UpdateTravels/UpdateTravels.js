@@ -64,7 +64,7 @@ const UpdateTravels = () => {
 
     return (
         <div>
-            <h1 className='text-pink-700 underline uppercase py-4 text-4xl font-bold text-center'>Update Product</h1>
+            <h1 className=' text-slate-500  underline-offset-8 underline uppercase py-4 text-4xl font-bold text-center'>Update Travels</h1>
             <div className=" flex justify-around flex-wrap">
                 {
                     currentPosts?.reverse()?.map(travel =>

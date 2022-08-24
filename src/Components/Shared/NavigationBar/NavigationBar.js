@@ -17,7 +17,7 @@ const NavigationBar = () => {
                 <Navbar.Brand as={NavLink} to="/" >
                     <Button >
 
-                        EXPLORE TRAVEL
+                        <h1 className=' text-slate-500 text-xl' >EXPLORE TRAVEL</h1>
 
                     </Button>
                 </Navbar.Brand>

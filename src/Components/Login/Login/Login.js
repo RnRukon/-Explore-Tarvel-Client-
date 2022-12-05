@@ -24,6 +24,7 @@ const Login = () => {
     }
     return (
         <Grid sx={{ mt: 12 }}>
+            <h1 className=' text-lg text-center my-7 fw-bolder'>Login</h1>
             <form onSubmit={handleLoginSubmit}>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -42,6 +43,9 @@ const Login = () => {
 
                     ></input>
                 </div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Password
+                    </label>
                 <input
                     required
                     id="standard-password-input"

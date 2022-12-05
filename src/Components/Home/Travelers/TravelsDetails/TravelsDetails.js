@@ -8,7 +8,7 @@ const TravelsDetails = () => {
     const { id } = useParams();
     const [travel, seTravel] = useState({});
     useEffect(() => {
-        fetch(`https://hidden-plains-90674.herokuapp.com/travel/${id}`)
+        fetch(`https://explore-tarvel-server.onrender.com/travel/${id}`)
             .then(res => res.json())
             .then(data => seTravel(data))
     }, [id])

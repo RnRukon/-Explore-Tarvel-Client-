@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Sitebar = () => {
     const [travels, setTravels] = useState([]);
     useEffect(() => {
-        fetch('https://hidden-plains-90674.herokuapp.com/travels')
+        fetch('https://explore-tarvel-server.onrender.com/travels')
             .then(res => res.json())
             .then(data => setTravels(data))
 

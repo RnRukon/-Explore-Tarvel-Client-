@@ -57,7 +57,7 @@ const LoginToggle = () => {
 
 
                     <Grid item className='col-lg-6'>
-                        <img className='img-fluid' src={toggle ? `https://alphalearning.in/assets/images/student-login-2.svg` : `https://i.ibb.co/rpBGTjq/isometric-data-protection-concept-with-parent-child-login-window-lock-3d-1284-63713.jpg`} alt="" />
+                        <img className='img-fluid' src={toggle ? `https://i.ibb.co/rpBGTjq/isometric-data-protection-concept-with-parent-child-login-window-lock-3d-1284-63713.jpg` : `https://i.ibb.co/rpBGTjq/isometric-data-protection-concept-with-parent-child-login-window-lock-3d-1284-63713.jpg`} alt="" />
                     </Grid>
                 </Grid>
 

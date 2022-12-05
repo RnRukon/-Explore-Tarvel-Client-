@@ -20,7 +20,7 @@ const UpdateTravels = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(9);
     useEffect(() => {
-        fetch('https://hidden-plains-90674.herokuapp.com/travels')
+        fetch('https://explore-tarvel-server.onrender.com/travels')
             .then(res => res.json())
             .then(data => setTravels(data) || '')
     }, [])
@@ -29,9 +29,9 @@ const UpdateTravels = () => {
 
     const handleTravelsDelete = (id) => {
         window.confirm("Are you sure you wish to delete this item?") &&
-            axios.delete(`https://hidden-plains-90674.herokuapp.com/travelDelete/${id}`)
+            axios.delete(`https://explore-tarvel-server.onrender.com/travelDelete/${id}`)
                 .then(res => res.data.deletedCount &&
-                    fetch('https://hidden-plains-90674.herokuapp.com/travels')
+                    fetch('https://explore-tarvel-server.onrender.com/travels')
                         .then(res => res.json())
                         .then(data => setTravels(data) || '')
                         .finally(() => {

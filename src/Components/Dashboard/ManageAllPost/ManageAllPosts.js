@@ -12,7 +12,7 @@ const ManageAllPosts = () => {
     const [postsPerPage] = useState(9);
     const [open, setOpen] = React.useState(false);
     useEffect(() => {
-        fetch('https://hidden-plains-90674.herokuapp.com/travels')
+        fetch('https://explore-tarvel-server.onrender.com/travels')
             .then(res => res.json())
             .then(data => setTravels(data))
 
@@ -29,7 +29,7 @@ const ManageAllPosts = () => {
 
 
     const handleApprove = (id) => {
-        fetch(`https://hidden-plains-90674.herokuapp.com/approve/${id}`, {
+        fetch(`https://explore-tarvel-server.onrender.com/approve/${id}`, {
             method: "PUT",
             headers: {
 
@@ -42,7 +42,7 @@ const ManageAllPosts = () => {
 
                 if (data.modifiedCount) {
                     alert('Approved Success')
-                    fetch('https://hidden-plains-90674.herokuapp.com/travels')
+                    fetch('https://explore-tarvel-server.onrender.com/travels')
                         .then(res => res.json())
                         .then(data => setTravels(data))
                 }
@@ -51,9 +51,9 @@ const ManageAllPosts = () => {
 
     const handleTravelsDelete = (id) => {
         window.confirm("Are you sure you wish to delete this item?") &&
-            axios.delete(`https://hidden-plains-90674.herokuapp.com/travelDelete/${id}`)
+            axios.delete(`https://explore-tarvel-server.onrender.com/travelDelete/${id}`)
                 .then(res => res.data.deletedCount &&
-                    fetch('https://hidden-plains-90674.herokuapp.com/travels')
+                    fetch('https://explore-tarvel-server.onrender.com/travels')
                         .then(res => res.json())
                         .then(data => setTravels(data))
                         .finally(() => {
@@ -80,7 +80,7 @@ const ManageAllPosts = () => {
                         <h1 className=' text-gray-600 text-center text-3xl fw-bold'>Post Found: {currentPosts?.length} </h1>
                     }
                 </div>
-              
+
                 <div className=" flex justify-around flex-wrap">
                     {
                         currentPosts?.reverse()?.map(travel =>

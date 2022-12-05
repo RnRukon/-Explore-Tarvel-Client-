@@ -49,7 +49,7 @@ const UpdateTravelsFrom = () => {
     console.log("1", rating, "2", value);
 
     useEffect(() => {
-        fetch(`https://hidden-plains-90674.herokuapp.com/travel/${id}`)
+        fetch(`https://explore-tarvel-server.onrender.com/travel/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBeforeImg(data?.img);
@@ -74,7 +74,7 @@ const UpdateTravelsFrom = () => {
         data.role = true;
 
 
-        axios.put(`https://hidden-plains-90674.herokuapp.com/UpdateTravelsFrom/${id}`, data)
+        axios.put(`https://explore-tarvel-server.onrender.com/UpdateTravelsFrom/${id}`, data)
             .then(res => {
                 if (res?.data?.modifiedCount) {
                     alert('Update SuccessFully')
@@ -95,10 +95,10 @@ const UpdateTravelsFrom = () => {
 
     return (
         <div className=' h-screen update-form-bg'>
-            <h1 className='text-yellow-400  text-center fw-bold underline uppercase py-11'>Update Products</h1>
+            <h1 className='  text-slate-100 fw-bold text-lg underline-offset-8  text-center fw-bold underline uppercase py-11'>Update Products</h1>
 
 
-            <div className='container-fluid col-lg-6 bg-white card card-body p-3 shadow-2xl'>
+            <div className='container-fluid col-lg-6 bg-white card card-body p-5 shadow-2xl '>
 
 
                 {<form
@@ -171,26 +171,28 @@ const UpdateTravelsFrom = () => {
                             />
                         </Grid>
 
-                        {/*     <Grid item xs={12} sm={6}>
-                            <img className='w-full h-auto' src={imgs?imgs:beforeImg} alt="" />
-                        </Grid> */}
+
 
                         <Grid item xs={12} sm={6}>
+                            <br />
                             <Stack direction="row" alignItems="center" spacing={2}>
 
-                                <IconButton color="primary" aria-label="upload picture" component="label">
+                                <IconButton color="primary" aria-label="upload picture" component="label" width='full'>
                                     <input hidden accept="image/png, image/jpg, image/jpeg" type="file"
                                         onChange={(e) => handleImgUpload(e.target.files[0])}
                                     />
-                                    {/* <PhotoCamera /> */}
-                                    <div>
-                                        <img style={{ position: 'relative' }} src={imgs ? imgs : beforeImg} alt="" />
+
+                                    <div className=' w-60'>
+
+                                        <img className=' w-screen ' src={imgs ? imgs : beforeImg} alt="" />
                                         <p style={{ position: 'absolute', top: "50%", left: '50%', bottom: '50%', color: 'white' }}><PhotoCamera /> </p>
                                     </div>
                                 </IconButton>
                             </Stack>
 
                         </Grid>
+
+
                         <Grid item xs={12} sm={6}>
 
 
@@ -235,51 +237,6 @@ const UpdateTravelsFrom = () => {
                         </Grid>
                     </Grid>}
                 </form>}
-
-
-                {/*   <form onSubmit={handleSubmit(update)}>
-
-                    <input className="form-control rounded-pill " autoFocus  {...register('title', { required: true })} placeholder="Title" defaultValue={title} /> <br />
-
-                    <input className="form-control rounded-pill" autoFocus {...register('description', { required: true })} placeholder="Description" defaultValue={description} /> <br />
-
-                    <input className="form-control rounded-pill"autoFocus {...register('category', { required: true })} placeholder="Category" defaultValue={category} /> <br />
-                    <input className="form-control rounded-pill"autoFocus {...register('info', { required: true })} placeholder="Info" defaultValue={info} /> <br />
-                    <input className="form-control rounded-pill"autoFocus {...register('address', { required: true })} placeholder="Address" defaultValue={address} /> <br />
-
-                    <input className="form-control rounded-pill"autoFocus {...register('price', { required: true })} placeholder="Price" defaultValue={price} /> <br />
-                    <img style={{ width: "100px", marginBottom: "5px" }} src={img} alt="" />
-                    <CssTextField
-                        sx={{ width: 1 }}
-                        accept="image/png, image/jpg, image/jpeg"
-                        type="file"
-                        onChange={e => handleImgUpload(e.target.files[0])} />
-
-
-                    <div className={classes.root}>
-                        <Rating
-                            name="hover-feedback"
-
-                            value={value}
-                            precision={0.5}
-                            onChange={(event, newValue) => {
-
-                                setValue(newValue === 0 ? rating : newValue);
-                            }}
-                            onChangeActive={(event, newHover) => {
-                                setHover(newHover);
-                            }}
-                        />
-                        {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>}
-                    </div>
-
-                    <button type="submit" className="  bg-slate-500 w-full  hover:bg-neutral-600 text-white font-bold py-2 px-4 rounded-full" >Update</button>
-
-
-                </form><br /> */}
-
-
-
             </div>
 
         </div>

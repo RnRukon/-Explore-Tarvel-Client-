@@ -12,7 +12,7 @@ const Travelers = () => {
 
 
     useEffect(() => {
-        fetch('https://hidden-plains-90674.herokuapp.com/travels')
+        fetch('https://explore-tarvel-server.onrender.com/travels')
             .then(res => res.json())
             .then(data => setTravels(data))
 
@@ -27,26 +27,26 @@ const Travelers = () => {
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-    const [newPost, setNewPost] = useState([])
+   
     function handleOnDragEnd(result) {
         if (!result.destination) return;
         const items = Array.from(currentPosts);
         const [reorderedItem] = items.splice(result.source.index, 1);
         items.splice(result.destination.index, 0, reorderedItem);
-        setNewPost(reorderedItem)
+       
 
     }
 
     return (
         <section className="text-gray-600">
- <br /><br />
+            <br /><br />
             <div>
                 <img className='w-full h-full' src={Banner} alt="" />
             </div>
 
-          <div>
-           
-          </div>
+            <div>
+
+            </div>
             <div >
                 <DragDropContext onDragEnd={handleOnDragEnd}>
                     <Droppable droppableId="characters">

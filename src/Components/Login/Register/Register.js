@@ -33,10 +33,14 @@ const Register = () => {
     }
     return (
 
-        <Grid >
+        <Grid sx={{ mt: 12}}>
+               <h1 className=' text-lg text-center my-7 fw-bolder'>Register</h1>
             {
                 isLoading ? <LinearProgress /> :
-                    <form onSubmit={handleLoginSubmit}>
+                    <form onSubmit={handleLoginSubmit} >
+                         <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Full Name
+                    </label>
                         <input
 
                             required
@@ -48,6 +52,9 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                         /> <br />
+                         <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Email
+                    </label>
                         <input
                             required
                             id="standard-email-input"
@@ -59,6 +66,9 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                         /> <br />
+                         <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Password
+                    </label>
                         <input
                             required
                             id="standard-password-input"
@@ -70,6 +80,9 @@ const Register = () => {
                             className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 
                         />
+                         <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Re-Password
+                    </label>
                         <input
                             required
                             id="standard-password-input"

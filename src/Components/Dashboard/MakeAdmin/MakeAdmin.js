@@ -10,7 +10,7 @@ const MakeAdmin = () => {
 
     const handleAddAdmin = (e) => {
         const user = { email }
-        fetch('https://hidden-plains-90674.herokuapp.com/users/admin', {
+        fetch('https://explore-tarvel-server.onrender.com/users/admin', {
             method: "PUT",
             headers: {
 
@@ -55,7 +55,7 @@ const MakeAdmin = () => {
 
                     </form>
                 </Box>
-               
+
             </Box>
         </Box>
     );

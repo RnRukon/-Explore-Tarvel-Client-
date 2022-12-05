@@ -13,7 +13,7 @@ const MyPosts = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(9);
     useEffect(() => {
-        fetch(`https://hidden-plains-90674.herokuapp.com/myPost/${user?.email}`)
+        fetch(`https://explore-tarvel-server.onrender.com/myPost/${user?.email}`)
             .then(res => res.json())
             .then(data => setTravels(data))
     }, [user?.email]);
@@ -21,11 +21,11 @@ const MyPosts = () => {
 
     const handleMyPostDelete = (id) => {
         window.confirm("Are you sure you wish to delete this item?") &&
-            axios.delete(`https://hidden-plains-90674.herokuapp.com/travelDelete/${id}`)
+            axios.delete(`https://explore-tarvel-server.onrender.com/travelDelete/${id}`)
                 .then(res => {
                     res.data.deletedCount &&
                         alert('Delete Success')
-                    fetch(`https://hidden-plains-90674.herokuapp.com/myPost/${user?.email}`)
+                    fetch(`https://explore-tarvel-server.onrender.com/myPost/${user?.email}`)
                         .then(res => res.json())
                         .then(data => setTravels(data))
 

@@ -6,12 +6,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const NavigationBar = () => {
     const { user, logOut } = useAuth();
-    const style = {
-        fontWeight: "bold",
-        color: "Yellow"
-    }
-
-    return (
+      return (
         <Navbar collapseOnSelect expand="lg" fixed="top" className='bg-gray-100 text-gray-600' variant="dark">
             <Container>
                 <Navbar.Brand as={NavLink} to="/" >

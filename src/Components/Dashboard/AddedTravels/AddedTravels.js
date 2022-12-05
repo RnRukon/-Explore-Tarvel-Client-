@@ -59,7 +59,7 @@ const AddedTravel = () => {
         travelerData.email = user.email;
 
 
-        fetch('https://hidden-plains-90674.herokuapp.com/travelPost', {
+        fetch('https://explore-tarvel-server.onrender.com/travelPost', {
             method: "POST",
             headers: {
 
@@ -89,7 +89,7 @@ const AddedTravel = () => {
     return (
         <div className=' h-screen pb-6 ' style={{ backgroundImage: 'url(https://i.ibb.co/37nbN1h/Getty-Images-150127577-58f920153df78ca159d41100.jpg)', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
             <div className=' container'>
-                <Typography variant='h4' className= ' text-gray-600 pt-20'>
+                <Typography variant='h4' className=' text-gray-600 pt-20'>
                     ADD A Travels Blog
                 </Typography>
 
@@ -190,15 +190,15 @@ const AddedTravel = () => {
                                             <input hidden accept="image/png, image/jpg, image/jpeg" type="file"
                                                 onChange={(e) => handleImgUpload(e.target.files[0])}
                                             />
-                                           
-                                            <div>
-                                                <img style={{ position: 'relative' }}  src={img ? img : imgIcon} alt="" />
+
+                                            <div className=' w-60'>
+                                                <img className=' w-screen' src={img ? img : imgIcon} alt="" />
                                                 <p style={{ position: 'absolute', top: "50%", left: '50%', bottom: '50%', color: 'white' }}><PhotoCamera /> </p>
                                             </div>
                                         </IconButton>
                                     </Stack>
 
-                                   
+
 
 
                                     <br />
